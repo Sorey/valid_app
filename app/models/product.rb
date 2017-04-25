@@ -5,5 +5,8 @@ class Product
   field :description, type: String
   field :publish_on, type: Boolean
 
-  validates :name, presence: true
+  belongs_to :person
+
+  validates :name, presence: true#, message: 'must be abided'
+  validates :publish_on, acceptance: { message: 'must be abided' }
 end
