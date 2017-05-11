@@ -7,7 +7,7 @@ class Person
   field :town, type: String
   field :birth_day, type: Date
 
-  has_many :products
+  has_many :products #, inverse_of: :person
   validates_associated :products
   validates :name, presence: true, length: { minimum: 3 }#, message: 'must be abided'
 end
